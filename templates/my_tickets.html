@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>My Tickets</h1>
+<ul>
+    {% for ticket in tickets %}
+    <li>{{ ticket.event.title }} - {{ ticket.booking_date }} - {{ 'Paid' if ticket.payment_status else 'Pending Payment' }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

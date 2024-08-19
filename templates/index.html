@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Upcoming Events</h1>
+<ul>
+    {% for event in events %}
+    <li>
+        <a href="{% url 'book_ticket' event.id %}">{{ event.title }}</a> - {{ event.date }} at {{ event.location }}
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
